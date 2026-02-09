@@ -66,6 +66,44 @@ A fin de asegurar que el análisis sea ordenado, confiable, reproducible y efect
 
 ## Analisis de datos: 
 
+
+1. Carga de base de datos y revisión general.
+
+*** IMAGEN ***
+
+- Las variables tienen el formato correcto.
+- Los nombres de las variables están homologadas, es decir, no hay presencia de etiquetas atípicas
+- Hay presencia de "NA" en la base
+- Hay presencia de datos atípicos que cesgan el promedio, específicamente en la variable salario, con valores cercanos a los 50,000,000 USD
+- Hay existencia de datos ilógicos, específicamente en años de experiencia, se indica que hay valores cercanos a los 100 años
+
+Los detalles presentes en la base de datos se irán corrigiendo conforme se avance en el análisis a fin de adaptar las modificaciones a cada variable.
+
+1.1 Analisis general del salario.
+
+** IMAGEN HISTOGRAMA CON OUTLIERS Y SUMMARY **
+
+De acuerdo con la revisión de las metricas de tendencia central y del histograma, hay presencia de datos extremos que están cesgando la media. El 75% de los encuestados ganan menos de 120,596 USD, sin embargo, el valor máximo mostrado es de 50,000,000 USD. Los datos extremos del salario están generándo que la media sea alrededor de 101 mil USD, mientras que la mediana es de 75 mil USD. Por lo que se requiere aplicar el método IQR de Tukey, útil para definir los límites inferior y superior a partir de los cuales un valor se considera outlier.
+
+** IMAGEN **
+Como puede observarse el primer cuartil es igual a 38,171 USD y el tercer cuartil igual a 120,596 USD, dando como resultado un IQR igual a 82,425 USD. El cual nos permite definir los limites inferior y superior:
+
+limite inferior = -85,465 USD (no relevante ya que no hay salarios negativos)
+limite superior = 244,233 USD (salarios superiores a este valor se considerarán como outliers y serán eliminados)
+
+Aplicando el tratamiento anterior la nueva media es de 71,929 USD y la mediana de 79,574, reduciendo así la diferencia entre ambas y generando una base de datos más homogenea para el analisis. 
+
+
+
+
+
+
+
+
+
+
+
+
 * Codigo
 * Visualizaciones 
 
