@@ -147,6 +147,12 @@ Enla gráfica podemos observar que a medida que la experiencia aumenta, también
 
 ## 1.2.5 Análisis por modalidad laboral *** 
 
+REVISAR CON MÁS DETALLE
+
+*** Anexar gráfica de salarios medios por modalidad laboral *** 
+
+Los trabajos reomotos tienen la media salarial más alta (mayores a 80,000 USD), le sigue la modalidad hibrida (con tendencia a flexible) con salarios cercanos a los 80,000 USD. Aquellos trabajos de libre elección tienen una media salarial cercana a los 75,000 USD y los hibridos (con tendencia a presencial) cerca de los 70,000 USD. Algo muy notorio, es la diferencia existente con los salarios de modalidad presencial que son menores a los 45,000 USD. 
+
 * Codigo
 * Visualizaciones 
 
