@@ -116,35 +116,64 @@ Tras el tratamiento, la nueva media se reduce a 71,929 USD y la mediana aumenta 
 # 1.2 Analisis por factores 
 
 **(País, Tipo de puesto, Nivel educativo, Años de experiencia, Modalidad e Industria)**
----
+
 ## 1.2.1 Analisis por país
 
-Primero se define la nueva base de datos para eliminar NA de las variables a utilizar, posteriormente se definen las métricas a evaluar (promedios y medias del salario por país) y finalmente se genera la gráfica (se eligió la mediana para representar al trabajador "tipico" ya que este dato no se ve afectado ante rangos extremos). Sin embargo, cabe mencionar que este top tiene sus limitaciones, ya que la muestra para generar las medidas de tendencia central varía en gran medida, hay datos con n=1, hasta datos con n= 4,487. 
+Primero se depuraron los valores faltantes de las variables (lo que reduce la base de datos). Posteriormente, se calcularon medias y medianas salariales por país, eligiendo la mediana como métrica principal por su robustez frente a valores extremos. Es importante mencionar, que el tamaño muestral varía considerablemente entre países (desde n = 1 hasta n = 4,487), lo que introduce limitaciones interpretativas.
 
-*** Anexar gráfica del top de 15 paises con mediana salarial más alta) ***
+<img width="940" height="497" alt="6 top 15 paises con la mediana salarial mas alta sin outliers" src="https://github.com/user-attachments/assets/e6a3c3cb-f3d1-491b-8a57-a579ebfc821c" />
 
-Cómo puede observarse los países mejor pagados son Suiza (136,392 USD), EE.UU.AA. (136,000 USD) e Israel (132,470 USD). La mayoría de salarios altos se encuentran en países europeos con medias salariales que rondan entre los 88,900 USD y los 136,00 USD. 
+Cómo puede observarse los países con mayores medianas salariales son:
+* **Suiza:** 136,392 USD
+* **EE.UU.AA.:** 136,000 USD
+* **Israel:** 132,470 USD
+
+En general, los salarios más altas se encuentran en países europeos y norteamericanos, con medianas salariales entre los 88,900 y los 136,00 USD apróximadamente. 
+
+<img width="940" height="497" alt="7 los 15 paises con mediana salarial mas baja sin outliers" src="https://github.com/user-attachments/assets/2b124850-495e-42fa-8ed6-fcaf9021872b" />
+
+Los países peor pagados son:
+* La República Democrática de la Gente de Laos
+* Micronesia
+* Antigüa y Barbuda
+  
+Todos ellos con medias salariales de 1 USD (datos que podrían deberse a errores de captura). Es notorio que los países con menores salarios suelen ubicarse en África, con medianas salariales entre 1 USD y 2,822 USD anuales.  
+
+## 1.2.2 Analisis por tipo de puesto
+
+<img width="940" height="497" alt="8 mediana salarial por tipo de puesto sin outliers" src="https://github.com/user-attachments/assets/0fa83433-7788-458a-b6a3-abcf7e8f0e3d" />
+
+Las tres medianas salariales más altas son: 
+* **Gerente de ingeniería:** 116,015 USD
+* **Ejecutivo sénior:** 112,997 USD
+* **Arquitecto de software o soluciones:** 96,000 USD
+
+Las más bajas son:
+* **Estudiante:** 7,948 USD
+* **Retirado:** 40,063.5 USD
+* **Investigador académico:** 51,447.14 USD
+
+Esto sugiere que el nivel de responsabilidad, experiencia y especialización influyen de manera importante en el salario. Aún así, la media salarial de entrada al mercado laboral de la industria de desarrolladores se sitúa por encima de los 7,000 USD anuales. 
 
 
-*** Anexar gráfica del top de 15 países con mediana salarial más baja) ***
-
-Por otro lado, los 15 peores países pagados son La República Democrática de la Gente de Laos, Micronesia y Antigüa y Barbuda, con medias salariales de 1 USD (datos que podrían deberse a errores de captura). Asimismo, la mayoría de salarios corresponde a países que se encuentran en África, con medias salariales que rondan entre 1 USD y 2,822 USD. 
-
-## 1.2.2 Analisis por tipo de puesto 
-
-*** Anexar imagen mediana salarial por tipo de puesto ***
+<img width="940" height="497" alt="9 diagrama de cajas del salario por tipo de puesto sin outliers" src="https://github.com/user-attachments/assets/013b4f5a-3384-40fe-9955-07fd7f64a1d8" />
 
 
-Las tres medianas salariales más altas son: gerente de ingeniería (116,015 USD), ejecutivo sénior (112,997 USD) y arquitecto de software o soluciones (96,000 USD). Las tres medianas salariales más bajas son: investigador académico (51,447.14), retirado (40,063.5 USD) y estudiante (7,948 USD). En este sentido el nivel de especialización y experiencia jugarían un papel clave para un aumento salarial, puestos en dónde se requiere de mayor responsailidad, conocimiento, experiencia y uso de herramientas tecnológicas más especializadas son los que tienen mayores salarios. No obstante, la media salarial de entrada al mercado laboral es de más de 7 mil USD. 
+Por otro lado, el diagrama de cajas permite analizar la **dispersión salarial** dentro de cada puesto. Los puestos con mayor diversidad salarial presentan cajas más amplias, los rangos observados (mínimo - máximo) apróximados de algunos puestos relevantes son: 
 
-*** Anexar Bloxplot de la distribución salarial por tipo de puesto ***
+* **Ingeniero o analista financiero:** entre los ~20,000 USD y los ~140,000 USD
+* **Ingeniero en Machine Learning e Intaligencia Artificial:** entre los ~20,000 USD y los ~135,000 USD
+* **Ejecutivo Senior:** entre los ~40,000 USD y cerca de ~170,000 USD
 
-Por otro lado, la gráfica de cajas nos muestra el grado de distribución de cada puesto, se ordenaron de mayor a menos salario. En este sentido, no hay mucha diferencia con los mejor y peor pagados señalados en la gráfica anterior, pero si podemos observar que aquellas boxplots más "anchas" muestran mayor diversidad en los salarios, por ejemplo: el ingeniero o analista financiero (con salarios entre los 20,000 USD y casi los 140,000 USD aprox.), ingeniero en Machine Learning e Intaligencia Artificial ( con salarios entre más de 20,000 USD y los 135,000 USD aprox.) y Ejecutivo Senior (con salarios entre los 40,000 USD y cerca de 170,000 USD aprox.). Por otro lado, los boxplots más "cortos" muestran menor diversidad salarial, por ejemplo: estudiantes (con sueldos por debajo de los 25,000 USD aprox.), investigadores académicos (entre 25,00 USD y los 65,000 USD aprox.), administrador de sistema (con sueldos entre los 25,00 USD y los 80,000 USD aprox.)
+Por otro lado, los boxplots más "compactos" indican menor variabilidad salarial del puesto. Los rangos observados (mín-máx) apróximados de algunos ejemplos son: 
 
-Además, hay puestos con una gran presencia de datos extremos (puntos a la derecha de la caja), por ejemplo: desarrollador back-end, desarrollador full-stack, desarrollador front-end y estudiantes, lo que podría sugerir oportunidades lucrativas para ganar salarios mayores. Algo notorio es que, los puestos con salarios más altos no presentan tantos datos extremos, como el resto. En cuanto a la distribución de la media en general es equilibrada (heterogeneidad en nivel central), lo que no sugiere que haya un sesgo hacia mayores salarios en los puestos (salvo en casos como: el analista o ingeniero financiero y cientifico aplicado). 
+* **Estudiantes:** con sueldos por debajo de los ~25,000 USD
+* **Investigadores académicos:** entre ~25,00 USD y los ~65,000 USD
+* **Administrador de sistema:** entre los ~25,00 USD y los ~80,000 USD
 
+Además, algunos puestos presentan una notable cantidad de datos extremos (outliers), por ejemplo: desarrollador back-end, full-stack y front-end. Esto podría sugerir que, dentro de estos roles, existen casos particulares con salarios significativamente superiores al resto del grupo. De manera interesante, los puestos con mayores salarios promedio no presentan tantos valores atípicos, lo que sugiere que sus salarios tienden a ser altos pero menos dispersos.
 
-Nota: Las observaciones con valores faltantes en la variable “Puesto” fueron descartadas automáticamente por ggplot2 durante la generación del boxplot. Esto no afecta el cálculo de la distribución salarial por categoría, pero sí reduce el número total de casos considerados para el análisis.
+Nota: Las observaciones con valores faltantes en la variable Puesto fueron descartadas automáticamente por ggplot2 durante la generación del boxplot. Esto no afecta la forma de cada distribución, pero sí reduce el número total de casos incluidos en el análisis.
 
 ## 1.2.3 Análisis por nivel educativo
 
