@@ -111,7 +111,7 @@ Con ello se obtienen los límites:
 <img width="940" height="497" alt="5 diagrama de caja del salario anual" src="https://github.com/user-attachments/assets/90b867fc-6432-47ff-8256-5353afe64ac2" />
 
 
-Tras el tratamiento, la nueva media se reduce a 71,929 USD y la mediana aumenta ligeramente a 79,574 USD, reduciendo la brecha entre ambas y generando una distribución más homogénea. No obstante, el salario conserva un sesgo positivo, típico de este tipo de variables: la mayoría de personas gana salarios bajos o medianos y pocos individuos reportan salarios altos (obvservese el histograma y el diagrama de caja).
+Tras el tratamiento, la nueva media se reduce a 71,929 USD y la mediana aumenta ligeramente a 79,574 USD, generando así una distribución más homogénea. No obstante, el salario conserva un sesgo positivo, típico de este tipo de variables: la mayoría de personas gana salarios bajos o medianos y pocos individuos reportan salarios altos (obvservese el histograma y el diagrama de caja).
 
 # 1.2 Analisis por factores 
 
@@ -156,31 +156,40 @@ Las más bajas son:
 Esto sugiere que el nivel de responsabilidad, experiencia y especialización influyen de manera importante en el salario. Aún así, la media salarial de entrada al mercado laboral de la industria de desarrolladores se sitúa por encima de los 7,000 USD anuales. 
 
 
-<img width="940" height="497" alt="9 diagrama de cajas del salario por tipo de puesto sin outliers" src="https://github.com/user-attachments/assets/013b4f5a-3384-40fe-9955-07fd7f64a1d8" />
+<img width="1202" height="593" alt="9 diagrama de cajas del salario por tipo de puesto sin outliers" src="https://github.com/user-attachments/assets/bfdceab4-9a27-4dbe-9484-296421650a02" />
 
+Por otro lado, el diagrama de cajas permite analizar la **dispersión salarial** de cada puesto. En este sentido, aquellos puestos con cajas más alargadas muestran una mayor variabilidad salarial dentro del 50% central de la distribución (IQR), por ejemplo casos como: Analista financiero, Gerente de ingeniería, ejecutivo senior, gerente de producción, arquitecto de software o soluciones, científico aplicado, ingeniero de infraestructura de nube, profesionales de ciberseguridad, etc. 
 
-Por otro lado, el diagrama de cajas permite analizar la **dispersión salarial** dentro de cada puesto. Los puestos con mayor diversidad salarial presentan cajas más amplias, los rangos observados (mínimo - máximo) apróximados de algunos puestos relevantes son: 
+Por otro lado, a partir del puesto "científico de datos" y hasta los puestos con salarios más bajos, hay cajas más "cortas", esto refleja una menor variabilidad salarial dentro del 50% central de la distribución (IQR) de cada puesto (salvo profesionales de diseño UX y desarrolladores de aplicaciones de IA o físicos de IA). Sin embargo, en estos puestos, también hay presencia de outliers en estos puestos, mostrándo que hay algunas oportunidades salariales más altas (aunque no son la tendencia general).  
 
-* **Ingeniero o analista financiero:** entre los ~20,000 USD y los ~140,000 USD
-* **Ingeniero en Machine Learning e Intaligencia Artificial:** entre los ~20,000 USD y los ~135,000 USD
-* **Ejecutivo Senior:** entre los ~40,000 USD y cerca de ~170,000 USD
+Vale la pena agregar que, el Q3 del diagrama de caja (linea final de la caja) indican los salarios por debajo de los cuales el 75% de los trabajadores de cada puesto tiene. Los valores aproximados de Q3 para los puestos mejor remunerados son:
 
-Por otro lado, los boxplots más "compactos" indican menor variabilidad salarial del puesto. Los rangos observados (mín-máx) apróximados de algunos ejemplos son: 
+* **Gerente de ingeniería:** ~ 150,000 USD
+* **Ejecutivo Senior:** ~ 170,000 USD
+* **Gerente de producción:** ~ 150,000 USD
+* **Arquitecto de software o soluciones:** ~140,000 USD
+* **Científico aplicado:** 140,000 USD
 
-* **Estudiantes:** con sueldos por debajo de los ~25,000 USD
-* **Investigadores académicos:** entre ~25,00 USD y los ~65,000 USD
-* **Administrador de sistema:** entre los ~25,00 USD y los ~80,000 USD
+Por otro lado, para los puestos con menores valores de Q3 y por tando con salarios más bajos en el percentil 75, son:
 
-Además, algunos puestos presentan una notable cantidad de datos extremos (outliers), por ejemplo: desarrollador back-end, full-stack y front-end. Esto podría sugerir que, dentro de estos roles, existen casos particulares con salarios significativamente superiores al resto del grupo. De manera interesante, los puestos con mayores salarios promedio no presentan tantos valores atípicos, lo que sugiere que sus salarios tienden a ser altos pero menos dispersos.
+* **Analista de datos o negocios:** ~ 100,000 USD
+* **Administrador de sistema:** ~ 85,000 USD
+* **Investigador académico:** ~70,000 USD
+* **Estudiantes:** ~25,000 USD
 
-Nota: Las observaciones con valores faltantes en la variable Puesto fueron descartadas automáticamente por ggplot2 durante la generación del boxplot. Esto no afecta la forma de cada distribución, pero sí reduce el número total de casos incluidos en el análisis.
+Nota: Las observaciones con valores faltantes ("NA") en la variable Puesto fueron descartadas automáticamente por ggplot2 durante la generación del boxplot. Aunque los rangos intercuartílicos (IQR) permiten comparar la dispersión salarial entre puestos, es importante considerar que el tamaño de muestra (n) varía entre categorías. En puestos con menor n, los rangos y la presencia de valores extremos pueden ser menos representativos que en aquellos con muestras más amplias. 
 
 ## 1.2.3 Análisis por nivel educativo
 
-*** Anexar imagen de la gráfica de mediana salarial por nivel educativo ***
+<img width="993" height="551" alt="10 mediana salarial por nivel educativo" src="https://github.com/user-attachments/assets/bf718b7c-ccde-4d1d-9350-b27c49d0a66b" />
 
+La gráfica de medianas salariales por nivel educativo muestra una relación positiva y consistente entre el grado académico alcanzado y el nivel de ingresos. En partícular las personas con Doctorado, Maestría o Título universitario presentan las medianas salariales más altas, las cuales se ubican aproximadamente entre 75,000 USD y 90,000 USD. 
 
-Como puede observarse en la gráfica anterior, el nivel educativo influye positivamente en el nivel de ingreso, es decir aquellos empleados con doctorado, maestría o titulo universitario son los que reciben mayores sueldos (la mediana salarial se encuentra entre 75,000 USD y cerca de 90,000 USD). Esto podría relacionarse con los salarios por tipo de puesto en dónde al tener mayor especialización y roles con habilidades específicas se gana un sueldo mayor. Por otro lado, aquellos que cuentan con nivel secundaria, otros y primaria tienen sueldos menores a los 50,000 USD. Por lo que se sugeriría a los interesados en trabajar en la industria tecnológica continuar con su formación y especialización, especialmente en aquellas áreas con mayores salarios (Nube, Ciberseguridad, Machine Learning e IA). 
+Lo anterior podría relacionarse con los salarios por tipo de puesto en dónde puestos con mayores requerimientos de especialización y habilidades específicas tienen sueldos mayores. 
+
+Por otro lado, aquellos que cuentan con nivel secundaria, otros y primaria tienen sueldos menores a los 50,000 USD. 
+
+Por lo que se sugeriría a los interesados en trabajar en la industria tecnológica continuar con su formación y especialización, especialmente en aquellas áreas con mayores salarios (Nube, Ciberseguridad, Machine Learning e IA). 
 
 ## 1.2.4 Análisis por años de experiencia 
 
@@ -216,16 +225,6 @@ Como puede observarse la industria mejor pagada es la de seguros con una media s
 *** Anexar boxplot del salario por industria ****
 
 A pesar de que la industria de seguros es la mejor pagada, su rango salarial no es tan amplio como en las industrias de tecnología y salud (lo que indica que las industrias pueden ofrecer oportunidades salariales más competitivas), sin embargo hay presencia de datos extremos en el sector de seguros que podrían indicar algunas oportunidades para ganar salarios más altos. Por otro lado, el sector energético, educación superior y transporte y cadenas de suministro tienen rangos salariales mas "cortos", aunque con mayor presencia de datos extremos, indicando posibles oportunidades con salarios mayores (aunque no forman parte de lo común en el sector).
-
-
-
-
-
-
-
-
-* Codigo
-* Visualizaciones 
 
 
 
