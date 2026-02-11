@@ -232,13 +232,18 @@ La modalidad de libre elección muestra una media cercana a los 75,000 USD, mien
 
 Finalmente, la modalidad presencial presenta los salarios más bajos, con medias por debajo de los 45,000 USD, marcando una diferencia notable respecto al resto de las modalidades. 
 
-*** Anexar gráfica BOXPLOT  de salarios por modalidad laboral ***
+<img width="967" height="551" alt="13 diagrama de cajas del salario segun modalidad laboral sin outliers" src="https://github.com/user-attachments/assets/fe2fc593-d765-45a4-bf4c-d5ebe776f511" />
 
-Lo anterior se comprueba al visualizar la distribución salarial de cada modalidad laboral, la media del trabajo remoto es superior al resto, las opciones hibridas y libres en puntos intermedios y la presencial es la categoría con menor media salarial. Asimismo, podemos observar que el trabajo remoto tiene mayor variación salarial. El rango salarial central para la modalidad hibrida con tendencia a presencial se encuentra aproximadamente entre 40,000 USD y 105,000 USD, para hibrido con tendencia a flexible entre 45,000 USD y 115,000 USD aprox., para aquellos que trabajan con libre elección entre 45,000 USD y 110,000 USD aprox., para los que trabajan presencialmente entre 25,000 USD y 85,000 USD aprox. y los que trabajan en remoto los salarios pueden ir desde los 40,000 USD cerca de 140,000 USD aprox., aunque para cada categoría debe tenerse en cuenta los valores extremos que sugieren oportunidades laborales con mayores ingresos. 
+Lo anterior se comprueba al visualizar el diagrama de cajas de los salario por modalidad laboral. La mediana salarial de el modo presencial es la más baja de ls cinco categorrías, el 75% de los empleados en modalidad presencial ganan menos de ~ 85,000 USD. Por otro lado, los valores aproximados de Q3 para las otras modalidades laborales son:
 
-Siguiendo con lo anterior, aunque se eliminaron los outliers de la variable salario (se realizó al inicio del analsis), las categorias hibridas, libre elección y presencial cuentan con personas con salarios significativamente más altos respecto al resto del grupo, es decir, existe mayor variabilidad salarial interna (que podría deberse a puestios senior), por otro lado, los puestos remotos no presentan valores extremos, lo que sugiere una distribución salarial más uniforme y consistente entre quienes trabajan completamente a distancia. 
+**1. Híbrido con tendencia a presencial:** ~ 105,000 USD
+**2. Libre elección:** ~ 110,000 USD
+**3. Híbrido con tendencia a flexible:** ~ 115,000 USD
+**4. Remoto:** ~ 135,000 USD
 
-Nota: Las observaciones con valores faltantes ("NA") fueron filtradas de la gráfica.
+Anque se eliminaron los outliers de la variable salario (se realizó al inicio del analsis), las categorias hibridas, libre elección y presencial cuentan con personas con salarios significativamente más altos respecto al resto del grupo, es decir, existe mayor variabilidad salarial interna (que podría deberse a puestios senior), por otro lado, los puestos remotos no presentan valores extremos, pero sí una caja más alargada, lo que sugiere que aunque tienen un rango salarial más amplio para los trabajadores que se encuentran dentro del IQR, presentan una distribución salarial más uniforme y consistente entre quienes trabajan completamente a distancia. 
+
+Nota: Las observaciones con valores faltantes ("NA") fueron filtradas para el análisis.
 
 ## 1.2.6 Analisis por tipo de industria 
 
